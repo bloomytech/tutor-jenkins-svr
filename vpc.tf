@@ -14,6 +14,15 @@ resource "aws_subnet" "demo-public-subnet-1" {
     Name = "${var.env_prefix}-public-subnet-1"
   }
 }
+resource "aws_subnet" "demo-public-subnet-2" {
+  vpc_id            = aws_vpc.demo-vpc.id
+  cidr_block        = var.subnet_cidr_block2
+  availability_zone = var.availability_zone
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "${var.env_prefix}-public-subnet-2"
+  }
+}
 
 resource "aws_internet_gateway" "demo-igw" {
   vpc_id = aws_vpc.demo-vpc.id
