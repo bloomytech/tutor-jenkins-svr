@@ -8,10 +8,21 @@ variable "subnet_cidr_block" {
   default = "10.0.1.0/24"
 }
 
+variable "subnet_cidr_block2" {
+  type = string 
+  default = "10.0.2.0/24"
+}
+
 variable "availability_zone" {
   type = string
   default = "us-east-1a" 
 }
+
+variable "availability_zone2" {
+  type = string
+  default = "us-east-1b" 
+}
+
 
 variable "aws_region" {
   type = string
